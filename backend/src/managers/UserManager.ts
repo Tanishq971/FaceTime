@@ -24,12 +24,21 @@ export class UserManager{
             return;
         }
 
-
-        console.log(`user with username ${user.name} and id ${user.socketId}`);
-        let user2 = this.users.shift();
+        let user2 = this.users.pop();
         if(!user2) return ;
 
-
-        this.roomManager.createRoom(user , user2);
+       const roomNo = this.roomManager.createRoom(user , user2);
+       if(!roomNo){
+        return
+       }
+       
+       return this.roomManager.rooms.get(roomNo);
+       
     }
+    
+    joinHandler(){
+
+    }
+
+
 }

@@ -9,7 +9,7 @@ export interface Room{
     roomId:number
 }
 export class RoomManager{
-    private rooms : Map<number, Room>;
+     rooms : Map<number, Room>;
     private static ROOM_ID = 1;
 
    constructor(){
@@ -21,9 +21,8 @@ export class RoomManager{
        if(!user1) return;
        if(!user2) return;
        const roomId = this.generateRoomID();
-
        this.rooms.set(roomId , {user1 , user2 ,roomId})
-       console.log(this.rooms.get(roomId) , "GOt the rooms")
+       return roomId;
     }
    
     generateRoomID(){

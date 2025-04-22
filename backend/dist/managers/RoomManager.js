@@ -13,7 +13,7 @@ class RoomManager {
             return;
         const roomId = this.generateRoomID();
         this.rooms.set(roomId, { user1, user2, roomId });
-        console.log(this.rooms.get(roomId), "GOt the rooms");
+        return roomId;
     }
     generateRoomID() {
         return GLOBAL_ROOM_ID++;
